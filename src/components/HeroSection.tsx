@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Star, ShieldCheck, Sparkles, ArrowRight, MessageCircle } from 'lucide-react';
+import { Star, ShieldCheck, Sparkles, ArrowRight, MessageCircle, ChevronsRight } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/hangar-data';
 
 if (typeof window !== 'undefined') {
@@ -16,10 +16,10 @@ export default function HeroSection() {
 
   useGSAP(() => {
     gsap.from('.hero-reveal', {
-      y: 30,
+      y: 25,
       opacity: 0,
-      duration: 0.85,
-      stagger: 0.12,
+      duration: 0.8,
+      stagger: 0.1,
       ease: 'power3.out',
       clearProps: 'all'
     });
@@ -31,10 +31,10 @@ export default function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[100dvh] w-full flex items-center pt-24 pb-16 overflow-hidden bg-[#09090B]"
+      className="relative min-h-[100dvh] w-full flex items-center pt-28 pb-20 overflow-hidden bg-[#09090B]"
     >
       {/* Background High-Resolution Photography */}
-      <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 -z-10 w-full h-full overflow-hidden pointer-events-none select-none">
         <Image
           src="/estetica/Gemini_Generated_Image_2cyq0a2cyq0a2cyq.jpg"
           alt="Hangar Auto - Estética Automotiva de Precisão e Luxo"
@@ -42,46 +42,82 @@ export default function HeroSection() {
           priority
           sizes="100vw"
           quality={95}
-          className="object-cover object-right md:object-center brightness-[0.92] contrast-[1.05]"
+          className="object-cover object-[75%_center] md:object-right brightness-[0.88] contrast-[1.05]"
         />
 
-        {/* Studio Lighting Gradients for Maximum Readability */}
-        {/* Horizontal Dark Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
-        
-        {/* Mobile Extra Contrast Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#09090B] via-zinc-950/60 to-zinc-950/40 md:hidden" />
+        {/* Studio Lighting Dark Gradient Overlays */}
+        {/* Left-to-right fade ensuring needle-sharp contrast for typography */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#09090B] via-[#09090B]/90 md:via-[#09090B]/75 to-transparent" />
 
-        {/* Bottom Soft Fade to site background #09090B */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#09090B] via-[#09090B]/80 to-transparent" />
+        {/* Mobile Extra Dimming */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09090B] via-[#09090B]/70 to-transparent md:hidden" />
 
-        {/* Top Soft Vignette for navigation */}
+        {/* Bottom seamless blend into next sections */}
+        <div className="absolute bottom-0 left-0 right-0 h-44 bg-gradient-to-t from-[#09090B] via-[#09090B]/80 to-transparent" />
+
+        {/* Top Vignette for navigation */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#09090B]/90 to-transparent" />
       </div>
 
       {/* Hero Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 relative">
         <div className="max-w-2xl lg:max-w-3xl">
-          {/* Top Editorial Label */}
-          <div className="hero-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900/80 border border-white/10 backdrop-blur-md mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-zinc-300 uppercase">
-              ESTÉTICA AUTOMÓVEL &amp; HIGIENIZAÇÃO PREMIUM • HERVAL D&apos;OESTE - SC
+          {/* Top Editorial Technical Header */}
+          <div className="hero-reveal flex items-center justify-between max-w-lg mb-6 pb-2 border-b border-white/10 text-[10px] sm:text-xs uppercase tracking-[0.25em] text-zinc-400 font-semibold">
+            <span className="flex items-center gap-2 text-zinc-300">
+              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+              ESTÉTICA AUTOMÓVEL DE PRECISÃO
+            </span>
+            <span className="hidden sm:inline text-zinc-500">HERVAL D&apos;OESTE - SC</span>
+          </div>
+
+          {/* Subheading Tag */}
+          <div className="hero-reveal mb-3">
+            <span className="text-xs uppercase tracking-[0.3em] font-bold text-zinc-400">
+              PADRÃO EDITORIAL PREMIUM
             </span>
           </div>
 
-          {/* H1 Main Heading */}
-          <h1 className="hero-reveal font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-6">
-            A perfeição em cada detalhe.{' '}
-            <span className="metallic-gradient-text block mt-1">
-              Para o seu veículo e a sua casa.
+          {/* Main H1 Title with Luxury Accent Line */}
+          <h1 className="hero-reveal font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase leading-[1.05] mb-6">
+            A PERFEIÇÃO EM <br />
+            <span className="relative inline-block text-white">
+              CADA DETALHE
+              <span className="hidden sm:inline-block absolute -bottom-1 left-0 w-24 h-1 bg-[#D4AF37] rounded-full" />
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-reveal text-base sm:text-lg lg:text-xl text-zinc-300 font-normal leading-relaxed mb-8 max-w-2xl">
+          <p className="hero-reveal text-sm sm:text-base lg:text-lg text-zinc-300 font-normal leading-relaxed mb-8 max-w-xl">
             Serviços especializados de personalização de alto padrão, polimento técnico e higienização profunda residencial. O cuidado que eleva a durabilidade e a sofisticação do seu património.
           </p>
+
+          {/* 3 Technical Pills with Chevrons (Inspired by reference mockup) */}
+          <div className="hero-reveal grid grid-cols-1 sm:grid-cols-3 gap-3 mb-10 max-w-2xl">
+            <div className="flex items-center gap-2 p-3 rounded-xl bg-zinc-950/80 border border-white/10 backdrop-blur-md">
+              <ChevronsRight className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <div className="text-[11px] leading-tight">
+                <strong className="block text-white font-bold uppercase tracking-wider">Polimento</strong>
+                <span className="text-zinc-400">Correção &amp; Verniz</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 p-3 rounded-xl bg-zinc-950/80 border border-white/10 backdrop-blur-md">
+              <ChevronsRight className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <div className="text-[11px] leading-tight">
+                <strong className="block text-white font-bold uppercase tracking-wider">Vitrificação</strong>
+                <span className="text-zinc-400">Blindagem 9H Cerâmica</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 p-3 rounded-xl bg-zinc-950/80 border border-white/10 backdrop-blur-md">
+              <ChevronsRight className="w-4 h-4 text-[#D4AF37] shrink-0" />
+              <div className="text-[11px] leading-tight">
+                <strong className="block text-white font-bold uppercase tracking-wider">Hangar Home</strong>
+                <span className="text-zinc-400">Higienização Têxtil</span>
+              </div>
+            </div>
+          </div>
 
           {/* Double Action Conversion Buttons */}
           <div className="hero-reveal flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
@@ -91,9 +127,9 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               id="hero-cta-veiculo"
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-sm tracking-wide transition-all duration-300 shadow-[0_4px_25px_rgba(255,255,255,0.2)] hover:shadow-[0_4px_35px_rgba(255,255,255,0.35)] hover:-translate-y-0.5 active:translate-y-0"
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-zinc-100 hover:bg-white text-zinc-950 font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_4px_25px_rgba(255,255,255,0.2)] hover:shadow-[0_4px_35px_rgba(255,255,255,0.35)] hover:-translate-y-0.5 active:translate-y-0"
             >
-              <MessageCircle className="w-5 h-5 fill-zinc-950 text-zinc-950" />
+              <MessageCircle className="w-4 h-4 fill-zinc-950 text-zinc-950" />
               <span>Cuidar do Meu Veículo</span>
               <ArrowRight className="w-4 h-4 text-zinc-950 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -104,7 +140,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               id="hero-cta-residencial"
-              className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-zinc-900/80 hover:bg-zinc-800 text-zinc-100 font-semibold text-sm tracking-wide border border-white/15 hover:border-white/30 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5"
+              className="group inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-100 font-semibold text-xs uppercase tracking-wider border border-white/15 hover:border-white/30 backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5"
             >
               <Sparkles className="w-4 h-4 text-[#D4AF37]" />
               <span>Higienização Residencial</span>
@@ -125,7 +161,6 @@ export default function HeroSection() {
               <span className="text-zinc-300">Avaliação máxima em detalhe e acabamento</span>
             </div>
 
-            {/* Location & Guarantee Pills */}
             <div className="hidden sm:flex items-center gap-4 text-zinc-400">
               <span className="inline-flex items-center gap-1.5">
                 <ShieldCheck className="w-4 h-4 text-zinc-300" />
