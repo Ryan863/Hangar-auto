@@ -7,6 +7,7 @@ export interface ServiceItem {
   features: string[];
   duration: string;
   whatsappMessage: string;
+  image: string;
   popular?: boolean;
 }
 

@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import ServicesSection from '@/components/ServicesSection';
+import ShowcaseGallery from '@/components/ShowcaseGallery';
 import DifferentialsSection from '@/components/DifferentialsSection';
 import SocialProofSection from '@/components/SocialProofSection';
 import FAQSection from '@/components/FAQSection';
@@ -14,25 +15,28 @@ export default function Home() {
       {/* Sticky Editorial Navbar */}
       <Navbar />
 
-      {/* 1st Fold - Full-screen Hero Section with real asset */}
+      {/* 1st Fold - Full-screen Hero Section with real car asset and studio lighting */}
       <HeroSection />
 
-      {/* 2nd Fold - Specialized Modules: Automotive & Hangar Home Residential */}
+      {/* 2nd Fold - Specialized Modules: Automotive & Hangar Home Residential with rich photography */}
       <ServicesSection />
 
-      {/* 3rd Fold - Technical Differentials & Engineering Rigor */}
+      {/* 3rd Fold - Visual Results Gallery */}
+      <ShowcaseGallery />
+
+      {/* 4th Fold - Technical Differentials & Engineering Rigor */}
       <DifferentialsSection />
 
-      {/* 4th Fold - Real Social Proof & Google 5.0 Star Reviews */}
+      {/* 5th Fold - Real Social Proof & Google 5.0 Star Reviews */}
       <SocialProofSection />
 
-      {/* 5th Fold - Structured FAQ Accordion */}
+      {/* 6th Fold - Structured FAQ Accordion */}
       <FAQSection />
 
-      {/* 6th Fold - Location, Open Hours & Direct GPS Navigation */}
+      {/* 7th Fold - Location, Open Hours & Direct GPS Navigation */}
       <LocationSection />
 
-      {/* 7th Fold - Pre-footer CTA & Institutional Footer */}
+      {/* 8th Fold - Pre-footer CTA & Institutional Footer */}
       <FooterSection />
 
       {/* Floating Mobile WhatsApp Button */}

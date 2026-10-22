@@ -43,7 +43,8 @@ export const AUTOMOTIVE_SERVICES: ServiceItem[] = [
       "Brilho profundo, nítido e duradouro"
     ],
     duration: "1 a 2 dias úteis",
-    whatsappMessage: "Olá! Gostaria de consultar um orçamento para Polimento Técnico e Correção de Pintura do meu veículo.",
+    whatsappMessage: "Olá! Gostaria de consultar um orçamento para Polimento Técnico e Correção de Pintura do meu veículo na Hangar Auto.",
+    image: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1200&q=85",
     popular: true
   },
   {
@@ -60,12 +61,13 @@ export const AUTOMOTIVE_SERVICES: ServiceItem[] = [
     ],
     duration: "2 dias úteis",
     whatsappMessage: "Olá! Gostaria de saber mais sobre a Vitrificação Cerâmica 9H para proteger a pintura do meu veículo.",
+    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=85",
     popular: true
   },
   {
     id: "detalhamento-interior",
     category: "automotive",
-    title: "Detalhamento e Higienização Interior Completa",
+    title: "Detalhamento & Higienização Interior Completa",
     badge: "Ambiente Puro",
     description: "Higienização técnica minuciosa de cada centímetro da cabine. Desmontagem cautelosa de bancos quando necessária, sucção a vácuo, vaporização e assepsia profunda dos dutos de climatização.",
     features: [
@@ -76,12 +78,13 @@ export const AUTOMOTIVE_SERVICES: ServiceItem[] = [
     ],
     duration: "1 dia útil",
     whatsappMessage: "Olá! Gostaria de agendar o Detalhamento e Higienização Interior Completa do meu carro.",
+    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=85",
     popular: false
   },
   {
     id: "tratamento-couro",
     category: "automotive",
-    title: "Tratamento de Estofos em Pele & Materiais Nobres",
+    title: "Tratamento de Couro & Materiais Nobres",
     badge: "Preservação Luxo",
     description: "Limpeza técnica com formulação de pH neutro e hidratação profunda que rejuvenesce o couro legítimo e tecidos nobres, devolvendo a elasticidade natural, aroma suave e acabamento acetinado fosco original.",
     features: [
@@ -92,6 +95,7 @@ export const AUTOMOTIVE_SERVICES: ServiceItem[] = [
     ],
     duration: "4 a 6 horas",
     whatsappMessage: "Olá! Gostaria de um orçamento para Tratamento e Hidratação de Couro do meu automóvel.",
+    image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1200&q=85",
     popular: false
   }
 ];
@@ -111,6 +115,7 @@ export const RESIDENTIAL_SERVICES: ServiceItem[] = [
     ],
     duration: "2 a 3 horas no local",
     whatsappMessage: "Olá! Gostaria de agendar uma Higienização de Sofás e Estofos residenciais na Hangar Home.",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=85",
     popular: true
   },
   {
@@ -127,6 +132,7 @@ export const RESIDENTIAL_SERVICES: ServiceItem[] = [
     ],
     duration: "1h30 a 2 horas",
     whatsappMessage: "Olá! Gostaria de saber os valores para Sanitização de Colchão e Cabeceira da minha residência.",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=85",
     popular: false
   },
   {
@@ -143,6 +149,7 @@ export const RESIDENTIAL_SERVICES: ServiceItem[] = [
     ],
     duration: "2 horas + cura",
     whatsappMessage: "Olá! Gostaria de solicitar um orçamento para Impermeabilização de Sofá / Estofos na minha casa.",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=85",
     popular: true
   }
 ];
